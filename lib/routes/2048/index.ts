@@ -8,7 +8,7 @@ import { load } from 'cheerio';
 import timezone from '@/utils/timezone';
 import { parseDate } from '@/utils/parse-date';
 import { art } from '@/utils/render';
-import path from 'node:path';
+import * as path from 'node:path';
 
 export const route: Route = {
     path: '/:id?',
@@ -68,27 +68,30 @@ async function handler(ctx) {
 
     const rootUrl = 'https://hjd2048.com';
 
-    const entranceDomain = await cache.tryGet('2048:entranceDomain', async () => {
-        const { data: response } = await got('https://hjd.tw', {
-            headers: {
-                accept: '*/*',
-            },
-        });
-        const $ = load(response);
-        const targetLink = $('table.group-table tr').eq(1).find('td a').eq(0).attr('href');
-        return targetLink;
-    });
-
+    // const entranceDomain = await cache.tryGet('2048:entranceDomain', async () => {
+    //     const { data: response } = await got('https://hjd.tw', {
+    //         headers: {
+    //             accept: '*/*',
+    //         },
+    //     });
+    //     const $ = load(response);
+    //     const targetLink = $('table.group-table tr').eq(1).find('td a').eq(0).attr('href');
+    //     return targetLink;
+    // });
+    const entranceDomain=rootUrl;
     const currentUrl = `${entranceDomain}/2048/thread.php?fid-${id}.html`;
+    console.log("连接地址：",currentUrl);
 
     const response = await got({
         method: 'get',
         url: currentUrl,
     });
+    console.log("页面内容：",response.url);
 
     const $ = load(response.data);
-    const currentHost = `https://${new URL(response.url).host}`; // redirected host
-
+    // const currentHost = `https://${new URL(response.url).host}`; // redirected host
+    const currentHost = currentUrl;
+    console.log("测试地址：",currentHost);
     $('#shortcut').remove();
     $('tr[onmouseover="this.className=\'tr3 t_two\'"]').remove();
 
