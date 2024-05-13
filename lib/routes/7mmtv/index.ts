@@ -33,17 +33,17 @@ export const route: Route = {
 
   **Category**
 
-  | Chinese subtitles AV | Censored       | Amateur          | Uncensored       | Asian self-timer | H comics     |
+  | 中文字幕AV            | 审查            | 业余             | 未经审查           | 亚洲自拍          | H漫画|
   | -------------------- | -------------- | ---------------- | ---------------- | ---------------- | ------------ |
   | chinese\_list        | censored\_list | amateurjav\_list | uncensored\_list | amateur\_list    | hcomic\_list |
 
-  | Chinese subtitles AV random | Censored random  | Amateur random     | Uncensored random  | Asian self-timer random | H comics random |
+  | 中文字幕AV随机                | 随机审查          | 业余随机             | 未经审查的随机       | 亚洲自拍随机              | H漫画随机|
   | --------------------------- | ---------------- | ------------------ | ------------------ | ----------------------- | --------------- |
   | chinese\_random             | censored\_random | amateurjav\_random | uncensored\_random | amateur\_random         | hcomic\_random  |
 
   **Server**
 
-  | All Server | fembed(Full DL) | streamsb(Full DL) | doodstream | streamtape(Full DL) | avgle | embedgram | videovard(Full DL) |
+  | 所有服务器  | fembed（完整深度学习） | 流b（完整DL）   | 涂鸦流     | 流媒体（完整 DL）      | 平均   | 嵌入图     | videovard(完整 DL) |
   | ---------- | --------------- | ----------------- | ---------- | ------------------- | ----- | --------- | ------------------ |
   | all        | 21              | 30                | 28         | 29                  | 17    | 34        | 33                 |`,
 };
